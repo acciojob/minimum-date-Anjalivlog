@@ -1,5 +1,11 @@
 function minDate(dates) {
   //write you code here
+	const dateObjects = dates.map(dateStr => new Date(dateStr));
+	const minDateObject = dateObjects.reduce((minDate, currentDate) => {
+    return currentDate < minDate ? currentDate : minDate;
+    }); 
+	let minDateStr = minDateObject.getFullYear() + '/' + (minDateObject.getMonth()+1) + '/' + minDateObject.getDate();
+	return minDateStr
 }
 
 // Do not change the code
@@ -31,7 +37,7 @@ var dates = [
   "2023/03/24",
   "2023/03/25",
   "2023/03/26",
-  "2023/03/27",
+  "2023/03/27", 
   "2023/03/28",
   "2023/03/29",
   "2023/03/30",
